@@ -10,7 +10,7 @@ var userArray = [
     photo: "google.com",
     scores: [
 		5,
-		10
+		5
       	
     ]
   },
@@ -19,7 +19,7 @@ var userArray = [
     photo: "google.com",
     scores: [
 		4,
-		6
+		5
     ]
   }
 ];

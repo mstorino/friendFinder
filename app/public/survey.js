@@ -83,7 +83,7 @@ $("#submit").on("click", function(event) {
 		
 		$("#myModal").modal('show');
 		$("#myModal").on('shown.bs.modal', function(){
-		$('#myModal').find('.modal-body').html('<div class="col-lg-12"><div class="text-center"><img src="' + bestFriend.userPhoto + '" alt="Picture Of Your Best Friend"></div><div class="text-center caption"><h3>' + bestFriend.userName + '</h3></div></div>');
+		$('#myModal').find('.modal-body').html('<div class="col-lg-12"><div class="text-center"><img src="' + bestFriend.userPhoto + '" alt="Picture Of Your Best Friend"></div><div class="text-center caption"><h2>' + bestFriend.userName + '</h2></div></div>');
 		});
 
 

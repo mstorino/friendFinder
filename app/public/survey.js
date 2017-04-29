@@ -14,21 +14,28 @@ $("#submit").on("click", function(event) {
       //create new friend object with information from user
 	    var newFriend = {
 	        userName: $("#userName").val().trim(),
+	        userPhoto: $("#userPhoto").val().trim(),
 	        scores: [
 	            $("#q1Selected").val(), 
-	           	$("#q2Selected").val()
+	           	$("#q2Selected").val(),
+	           	$("#q3Selected").val(),
+	           	$("#q4Selected").val(),
+	           	$("#q5Selected").val(),
+	           	$("#q6Selected").val()
 	        ]
 	     };
 
-		var bestFriend = "";
+		var bestFriend = [];
 		var total = 100;
 		var newTotal;
+
+		// console.log(newFriend.userPhoto);
 
 	// get data from api
 
       	$.ajax({url: currentUrl + "/api/friends", method: "GET" }).done(function(userArray){
       		
-	        
+	        console.log(userArray);
 
 			apiCounter();
 			
@@ -37,7 +44,7 @@ $("#submit").on("click", function(event) {
 						oldFriend = userArray[i];
 						answerCompare();
 				}
-				console.log("Low Score: " + total + ". Your new best friend: " + bestFriend);
+				// console.log(bestFriend);
 			}
 		
 
@@ -60,29 +67,24 @@ $("#submit").on("click", function(event) {
 		function totalCompare(){
 			if (newTotal < total) {
 				total = newTotal;
-				bestFriend = oldFriend.userName;
-				console.log("new total is:" + total);
-			} else if (newTotal === total) {
-				bestFriend += " & " + oldFriend.userName;
-			}
+				// bestFriend = oldFriend.userName;
+				bestFriend = oldFriend;
+			} 
 		}
 
-		//empty fields
 
-		//post data to friends API
+
+		// post data to friends API
+
 		$.post("/api/friends", newFriend);
+
+
+		// Display Results in Survey Modal
 		
 		$("#myModal").modal('show');
 		$("#myModal").on('shown.bs.modal', function(){
-				$('#myModal').find('.modal-body').append('<p>Friend: ' + bestFriend + '</p>');
+		$('#myModal').find('.modal-body').html('<div class="col-lg-12"><div class="text-center"><img src="' + bestFriend.userPhoto + '" alt="Picture Of Your Best Friend"></div><div class="text-center caption"><h3>' + bestFriend.userName + '</h3></div></div>');
 		});
-
-
-
-							
-
-    
-  // });
 
 
 
@@ -91,6 +93,7 @@ $("#submit").on("click", function(event) {
 //reset values
 
 		$("#userName").val(" ");
+		$("#userPhoto").val(" ");
 	    $("#q1Selected").val("1"); 
 	    $("#q2Selected").val("1");
 	

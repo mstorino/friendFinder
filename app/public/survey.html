@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Survey Page</title>
+  <title>Avatar Finder | Survey</title>
 
   <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  
-  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">  
 
 </head>
 <body>
@@ -17,7 +15,9 @@
     <div class="row">
 
       <div class="col-lg-12">
-         <h2><span class="glyphicon  glyphicon-apple"></span> Survey Questions</h2>
+         <h1><span class="glyphicon  glyphicon-apple"></span> Let's Find Friends in the year 2044</h1>
+        
+
         <hr>
       </div>
     </div> <!-- end jumbotron -->
@@ -33,29 +33,104 @@
             </div>
           </form>
 
+           <form>
+            <div class="form-group">
+              <label for="userPhoto">Photo</label>
+              <input type="text" class="form-control" id="userPhoto">
+            </div>
+          </form>
+
           <h3>Question 1</h3>
-          <h4>Text of Question 1 Here.</h4>
+          <h4>When was the last time you went outside?</h4>
           
           <form>
             <div class="form-group">
               <label for="Question 1">Select An Option</label>
               <select class="form-control" id="q1Selected">
-                <option value="1">1 (strongly agree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (strongly disagree)</option>
+                <option value="1">Today</option>
+                <option value="2">Yesterday</option>
+                <option value="3">Last Week</option>
+                <option value="4">Last Month</option>
+                <option value="5">Last Year</option>
               </select>
             </div>
 
+          <h3>Question 2</h3>
+          <h4>Favorite Video Game</h4>
+
+           <form>
             <div class="form-group">
               <label for="Question 2">Select An Option</label>
               <select class="form-control" id="q2Selected">
-                <option value="1">1 (strongly agree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (strongly disagree)</option>
+                <option value="1">Pac-Man</option>
+                <option value="2">Adventure</option>
+                <option value="3">Joust</option>
+                <option value="4">Dungeons of Daggorath</option>
+                <option value="5">Zork</option>
+              </select>
+            </div>
+          </form>
+
+          <h3>Question 3</h3>
+          <h4>Favorite Movie</h4>
+
+           <form>
+            <div class="form-group">
+              <label for="Question 2">Select An Option</label>
+              <select class="form-control" id="q3Selected">
+                <option value="1">LadyHawke</option>
+                <option value="2">Ewoks The Battle For Endor</option>
+                <option value="3">Bladerunner</option>
+                <option value="4">Say Anything</option>
+                <option value="5">Wargames</option>
+              </select>
+            </div>
+          </form>
+
+          <h3>Question 4</h3>
+          <h4>Your Avatar Name is Based on</h4>
+
+           <form>
+            <div class="form-group">
+              <label for="Question 2">Select An Option</label>
+              <select class="form-control" id="q4Selected">
+                <option value="1">God of the Hunt</option>
+                <option value="2">Knight</option>
+                <option value="3">Samuraii Sword</option>
+                <option value="4">Self Aggrandizing Acronym</option>
+                <option value="5">Nothing, you're a OII drone</option>
+              </select>
+            </div>
+          </form>
+
+          <h3>Question 5</h3>
+          <h4>Role in the High Five</h4>
+
+           <form>
+            <div class="form-group">
+              <label for="Question 2">Select An Option</label>
+              <select class="form-control" id="q5Selected">
+                <option value="1">The Bad Guy</option>
+                <option value="2">The Smart Girl</option>
+                <option value="3">The Heart</option>
+                <option value="4">The Lancer</option>
+                <option value="5">The Hero</option>
+              </select>
+            </div>
+          </form>
+
+          <h3>Question 6</h3>
+          <h4>Temperment</h4>
+
+           <form>
+            <div class="form-group">
+              <label for="Question 2">Select An Option</label>
+              <select class="form-control" id="q6Selected">
+                <option value="1">Sanguine</option>
+                <option value="2">Choleric</option>
+                <option value="3">Leukine</option>
+                <option value="4">Melancholic</option>
+                <option value="5">Evil</option>
               </select>
             </div>
           </form>
@@ -68,7 +143,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/mstorino/friendFinder">GitHub Repo</a></p>
+        <p><a href="/api/friends">API Friends List</a> | <a href="https://en.wikipedia.org/wiki/Ready_Player_One">Ready Player One</a></p>
       </div>
     </footer>
 
@@ -87,7 +162,6 @@
           <h4 class="modal-title">Good News You Have A Friend!</h4>
         </div>
         <div class="modal-body">
-         <!--  <p>Some text in the modal.</p> -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -97,15 +171,6 @@
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
   </div> <!-- end container -->
 
 </body>
@@ -114,22 +179,3 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="survey.js"></script>
-
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
-<!-- <script type="text/javascript">
-
-
-    $("#submit").on("click", function(event) {
-      event.preventDefault();
-
-          // Here we grab the form elements
-          var newFriend = {
-            userName: $("#userName").val().trim(),
-          };
-
-          console.log(newFriend);    
-
-      });
-      
-
-</script> -->
